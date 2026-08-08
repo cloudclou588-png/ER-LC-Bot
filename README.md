@@ -20,6 +20,18 @@
 - `/solicitar` — formulario para solicitudes de staff/whitelist
 - `/status` — muestra jugadores conectados en tu servidor de ER:LC (necesita API key, ver abajo)
 - `/ping` — prueba que el bot esté vivo
+- `/canal-bienvenida` — configura en qué canal se saluda a los miembros nuevos
+- `/mensaje-bienvenida` — personaliza el texto de bienvenida (usa `{miembro}` y `{servidor}`)
+- `/probar-bienvenida` — muestra cómo se vería el mensaje sin esperar a que alguien entre
+- `/canal-solicitudes` — configura a qué canal llegan las solicitudes enviadas con `/solicitar`
+
+### Cómo activar la bienvenida
+1. Usa `/canal-bienvenida` y selecciona el canal donde quieres que aparezca el saludo.
+2. (Opcional) Usa `/mensaje-bienvenida` para cambiar el texto, ej:
+   `¡Bienvenido {miembro} a {servidor}! Ve a #reglas antes de jugar.`
+3. Cada vez que alguien nuevo entre al servidor, el bot lo saludará automáticamente.
+
+> Nota: la configuración se guarda en un archivo `config.json` que el bot crea solo. En Railway esto persiste mientras no borres el proyecto, pero si vuelves a subir el código desde cero (redeploy completo) puede reiniciarse — en ese caso solo vuelve a correr `/canal-bienvenida`.
 
 ### Cómo conseguir la API key de ER:LC
 Dentro de tu servidor privado de ER:LC, escribe el comando `:api` en el chat del juego (debes ser dueño o co-owner del servidor). Te dará una key — ponla en `ERLC_API_KEY` dentro del `.env`.
